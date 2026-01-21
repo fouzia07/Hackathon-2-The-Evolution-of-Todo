@@ -58,3 +58,84 @@ dmypy.json
 
 # UV
 uv.lock
+
+# Backend specific
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+backend/.venv/
+backend/.env
+backend/.env.local
+backend/.env.development.local
+backend/.env.test.local
+backend/.env.production.local
+backend/.env.staging.local
+backend/.env.testing.local
+backend/requirements.lock
+
+# Frontend specific
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+frontend/.nuxt/
+frontend/nuxt dist/
+frontend/.output/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.env.staging.local
+frontend/.env.testing.local
+frontend/yarn.lock
+frontend/package-lock.json
+frontend/pnpm-lock.yaml
+frontend/npm-debug.log*
+frontend/coverage/
+frontend/.nyc_output
+frontend/test-report.xml
+frontend/.eslintcache
+frontend/.prettierignore
+
+# Environment variables
+.env.local
+.env.dev
+.env.test
+.env.prod
+.env.backup
+.env.example
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+VolumeIcon.icns
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.out
+
+# Distribution
+*.tar.gz
+*.whl
+
+# System
+*.tmp
+*.temp
+
+# Claude Code temporary files
+tmpclaude-*-cwd
+nul

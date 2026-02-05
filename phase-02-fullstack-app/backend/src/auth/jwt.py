@@ -51,7 +51,7 @@ def verify_token(token: str, db: Session) -> Optional[User]:
         if user_id is None:
             return None
         token_data = {"user_id": user_id}
-    except jwt.PyJWTError:
+    except jwt.JWTError:
         return None
 
     user = db.get(User, user_id)

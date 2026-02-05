@@ -16,14 +16,9 @@ def hash_password(password: str) -> str:
     Returns:
         str: Hashed password
     """
-    # Truncate password to 72 bytes to comply with bcrypt limit
-    password_bytes = password.encode('utf-8')[:72]
-
-    # Generate salt and hash the password
-    salt = bcrypt.gensalt()
+    password_bytes = password.encode('utf-8')
+    salt = bcrypt.gensalt(rounds=12)
     hashed = bcrypt.hashpw(password_bytes, salt)
-
-    # Return as string
     return hashed.decode('utf-8')
 
 
@@ -38,9 +33,6 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     Returns:
         bool: True if passwords match, False otherwise
     """
-    # Truncate password to 72 bytes to comply with bcrypt limit
-    password_bytes = plain_password.encode('utf-8')[:72]
+    password_bytes = plain_password.encode('utf-8')
     hashed_bytes = hashed_password.encode('utf-8')
-
-    # Verify the password
     return bcrypt.checkpw(password_bytes, hashed_bytes)

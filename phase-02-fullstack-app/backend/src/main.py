@@ -5,9 +5,13 @@ This module sets up the FastAPI application with all routes and middleware.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from sqlmodel import SQLModel
 from .api.v1.auth import router as auth_router
 from .api.v1.tasks import router as tasks_router
 from .config import settings
+from .database.session import engine
+from .models.user import User
+from .models.task import Task
 
 
 # Create the FastAPI application
@@ -17,6 +21,14 @@ app = FastAPI(
     description="REST API for the Full-Stack Web Todo Application",
     debug=settings.debug,
 )
+
+
+@app.on_event("startup")
+def on_startup():
+    """
+    Initialize database tables on application startup.
+    """
+    SQLModel.metadata.create_all(engine)
 
 
 # Add CORS middleware

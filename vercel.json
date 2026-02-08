@@ -1,8 +1,6 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd phase-02-fullstack-app/frontend && npm install && npm run build",
-  "devCommand": "cd phase-02-fullstack-app/frontend && npm run dev",
-  "installCommand": "cd phase-02-fullstack-app/frontend && npm install",
-  "framework": null,
+  "buildCommand": "npm run build --prefix phase-02-fullstack-app/frontend",
+  "installCommand": "npm install --prefix phase-02-fullstack-app/frontend",
   "outputDirectory": "phase-02-fullstack-app/frontend/.next"
 }
+

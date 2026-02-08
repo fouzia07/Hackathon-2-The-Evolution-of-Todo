@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build --prefix phase-02-fullstack-app/frontend",
-  "installCommand": "npm install --prefix phase-02-fullstack-app/frontend",
+  "buildCommand": "bash build.sh",
   "outputDirectory": "phase-02-fullstack-app/frontend/.next"
 }
+
 
